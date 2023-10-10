@@ -10,7 +10,8 @@ def index(request):
 
 #function to get any word and generate a response for it. from "encyclopedia" path.
 def content_entry(request,word):
-   return render(request, f"encyclopedia/{word}", {
-        "entries": util.list_entries()
+   return render(request, f"encyclopedia/ValueDef.html", {
+        "title_explanation": util.get_entry(word),
+        "word" : word
     }) 
     
